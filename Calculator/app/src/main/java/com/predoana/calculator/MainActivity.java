@@ -19,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
         final EditText editTextSecondValue = findViewById(R.id.et_secondNumber);
         Button button = findViewById(R.id.btn_add);
         Button button1 = findViewById(R.id.btn_sub);
+        Button button2 = findViewById(R.id.btn_mul);
+        Button button3 = findViewById(R.id.btn_div);
         final TextView textViewResult = findViewById(R.id.result);
 
         button.setOnClickListener(new View.OnClickListener() {
@@ -44,7 +46,28 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v1) {
+                String firstValue = editTextFirstValue.getText().toString();
+                String secondValue = editTextSecondValue.getText().toString();
 
+                int result = Integer.valueOf(firstValue) * Integer.valueOf(secondValue);
+                textViewResult.setText(String.valueOf(result));
+
+            }
+        });
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v1) {
+                String firstValue = editTextFirstValue.getText().toString();
+                String secondValue = editTextSecondValue.getText().toString();
+
+                double result = Double.valueOf(firstValue) / Double.valueOf(secondValue);
+                textViewResult.setText(String.valueOf(result));
+
+            }
+        });
 
     }
 }
